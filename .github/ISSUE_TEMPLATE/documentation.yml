@@ -1,0 +1,49 @@
+name: Documentation or resource contribution
+description: Suggest a correction, guide, reference, or developer resource.
+title: "[Documentation]: "
+labels: ["documentation"]
+body:
+  - type: dropdown
+    id: contribution_type
+    attributes:
+      label: Contribution type
+      options:
+        - Correction
+        - New guide or tutorial
+        - Developer resource
+        - Reference material
+        - Learning path
+        - Outdated information
+        - Attribution or licensing correction
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: affected_page
+    attributes:
+      label: Affected page, file, or resource
+      description: Provide a URL or repository path, if applicable.
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested contribution
+      description: Explain the correction or contribution and why it is useful.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources and references
+      description: Link to official documentation or reliable sources that support the contribution.
+  - type: textarea
+    id: licensing
+    attributes:
+      label: Attribution and reuse information
+      description: Identify the original author, source, and licence when proposing third-party material.
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Content rights
+      options:
+        - label: I have not knowingly submitted copyrighted material without permission or a compatible licence.
+          required: true

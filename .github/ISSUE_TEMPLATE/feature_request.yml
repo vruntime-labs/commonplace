@@ -1,0 +1,40 @@
+name: Feature request
+description: Suggest an improvement or new capability.
+title: "[Proposal]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the problem or opportunity first. A proposed implementation is welcome, but it is not required.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem should this solve?
+      description: Who experiences this problem, and in what situation?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: What would you like to see?
+      description: Describe the outcome or capability you have in mind.
+    validations:
+      required: true
+  - type: textarea
+    id: beneficiaries
+    attributes:
+      label: Who would benefit?
+      description: For example, beginners, maintainers, educators, or experienced developers.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe any existing approach or workaround.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked for an existing request about this idea.
+          required: true

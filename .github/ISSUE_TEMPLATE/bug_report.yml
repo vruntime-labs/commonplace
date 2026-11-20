@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a reproducible problem in Commonplace.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. Please provide enough detail for maintainers to understand and reproduce it. Do not include passwords, tokens, or private user data.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the problem clearly.
+      placeholder: Tell us what you observed.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: List the steps that lead to the problem.
+      placeholder: |
+        1. Go to ...
+        2. Select ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, operating system, device, or relevant version.
+      placeholder: e.g. Chrome on Windows 11
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or additional evidence
+      description: Add screenshots or logs if useful. Remove secrets and personal information first.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked for an existing report about this problem.
+          required: true
