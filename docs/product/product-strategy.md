@@ -1,8 +1,8 @@
 # Commonplace — Product Strategy
 
 **Document:** `product-strategy.md`  
-**Version:** 0.1  
-**Status:** Draft for review  
+**Version:** 0.2  
+**Status:** Product direction and MVP scope approved; detailed design and implementation decisions remain open  
 **Project:** Commonplace  
 **Organisation:** VRuntime Labs
 
@@ -140,20 +140,20 @@ GitHub is the proposed source of truth for published public content.
 
 ## 7. Core product capabilities
 
-| Capability | Purpose |
+| Capability | MVP commitment |
 |---|---|
-| Resource discovery | Browse and explore organised resources |
-| Search | Find content across categories |
-| Resource detail pages | Understand, evaluate, and use resources |
-| Learning guides | Develop technical understanding |
-| Learning paths | Follow structured learning sequences |
-| Collections | Explore related knowledge grouped by topic |
-| Trust information | Inspect sources, licences, verification, and maintenance |
-| Contributions | Submit new resources and improvements |
-| Editorial review | Maintain content quality and consistency |
+| Resource discovery | Browse the initial Discover categories listed in Section 10 |
+| Search | Static, cross-category search with useful basic filters |
+| Resource detail pages | Explain purpose, source, licence, compatibility, installation or usage, maintenance, and known limitations where relevant |
+| Learning guides | Publish practical, beginner-accessible guides with technical depth where needed |
+| Learning paths | Provide a small number of curated sequences that connect related guides and resources |
+| Editorial collections | Group related public knowledge into curated collections; these are not downloadable templates or user-personalised notebooks |
+| Trust information | Show source, attribution, licence, review state, and maintenance information without overstating verification |
+| Contributions | Support both GitHub pull requests and a guided website submission path |
+| Editorial review | Validate submissions and use human review before publication |
 | Responsive interface | Support phones, foldables, tablets, laptops, and desktops |
 
-These are strategic capability areas. Their precise MVP scope remains subject to review.
+The MVP boundary and exclusions are defined in Section 10. These commitments describe product outcomes, not a decision to use a particular framework, database, hosting runtime, or submission implementation.
 
 ## 8. Trust and editorial principles
 
@@ -185,63 +185,99 @@ Guides about legal, security, and compliance topics should explain their scope a
 7. **Accessible and responsive:** The platform should work across devices and accommodate different needs.
 8. **Maintainable:** Content and software should be structured for long-term improvement.
 
-## 10. MVP direction
+## 10. Approved MVP scope
 
-The first release should prove that Commonplace can organise, present, and maintain useful knowledge effectively.
+**Status: Approved by the project owner on 20 November 2026.**
 
-### Proposed MVP priorities
+The first release must deliver a useful, dependable knowledge experience across all three pillars: Discover, Learn, and Contribute. None of the three pillars is treated as an optional add-on.
 
-**Priority 1 — Foundation**
-- Clear homepage and navigation.
-- Discover, Learn, and Contribute sections.
-- Consistent content structure and metadata.
-- Responsive design.
-- Accessible reading experience.
+### 10.1 Discover — MVP
 
-**Priority 2 — Discovery**
-- Initial resource directories.
-- Resource detail pages.
-- Cross-category search.
-- Useful category and topic filters.
-- Source and licence information.
+Launch with focused, curated directories for:
 
-**Priority 3 — Learning**
-- Initial practical guides.
-- Beginner-friendly entry points.
-- Technical reference material.
-- Related resource links.
+- Prompt Library.
+- Skills Library.
+- MCP Server Directory.
+- Developer Tools and AI Coding Tools.
+- Rules and Configurations.
 
-**Priority 4 — Contribution**
-- GitHub pull-request contribution process.
-- Contribution guidelines.
-- Content validation.
-- Editorial review and publication process.
+Each resource entry should include the relevant details needed to evaluate and use it: purpose, original source, attribution, licence or licence status, supported tools and versions where known, installation or usage guidance, maintenance information, and known limitations or safety considerations. Do not invent missing metadata; show when information is unknown or not yet checked.
 
-**Priority 5 — Trust and maintenance**
-- Verification and maintenance indicators.
-- Attribution and licence handling.
-- Content update procedures.
-- Reporting incorrect or outdated information.
+Provide cross-category search and basic category/topic filters. Prioritise reliable discovery over advanced personalisation or complex search infrastructure.
 
-The initial release should prioritise a useful, dependable public knowledge experience over a large feature count.
+### 10.2 Learn — MVP
+
+Publish practical guides and curated learning tracks covering:
+
+- Developer Fundamentals.
+- AI Engineering and AI-assisted development.
+- Secure Development and secure coding.
+- Software Architecture and engineering practices.
+- SEO and Website Growth.
+- GEO and AI Search Visibility.
+- UI/UX Standards and Accessibility.
+- Testing, debugging, and quality assurance.
+- Deployment and Infrastructure.
+- Legal, licensing, privacy, and compliance awareness.
+
+Content should offer beginner-friendly entry points without excluding advanced material. Guides should link to relevant resources and to other guides. Legal and security material must clearly state its scope and must not present itself as professional advice or a certification.
+
+### 10.3 Contribute — MVP
+
+Both contribution paths are part of the approved MVP:
+
+1. **GitHub-first:** Contributors can fork the repository, make a change, and submit a pull request.
+2. **Website-based:** Contributors can submit a resource or knowledge suggestion through a guided website experience.
+
+Both paths must feed a shared validation, moderation, and human editorial review process. Approved public content is committed to GitHub, which remains the source of truth for published content. Contributors should receive clear submission guidance, feedback or status information appropriate to the chosen path, and attribution for accepted work.
+
+The website submission path must not expose a GitHub write token or other privileged credential in browser code. Its implementation must use a safe server-side integration or a safe GitHub-backed intake mechanism. This is a product and security requirement, not a selection of a particular backend or hosting service.
+
+### 10.4 MVP experience and quality requirements
+
+- Public reading and basic discovery are free and do not require an account.
+- The interface adapts to phones, foldable devices, tablets, laptops, and desktops; it is not merely a scaled desktop layout.
+- Core reading and navigation remain usable with keyboard access and assistive technologies.
+- Public content should remain readable when client-side JavaScript is unavailable; search enhancement must not make the knowledge itself inaccessible.
+- Resource sources, attribution, licence status, review state, and maintenance information are presented honestly.
+- Contributions are validated and reviewed; contributed code, skills, prompts, MCP servers, and shell instructions are treated as untrusted and are never automatically executed by the platform.
+- The platform remains open-source, free-first, and tool- and model-agnostic.
+- Launch with a focused set of useful, reviewed entries and guides rather than maximising the number of listings.
+
+### 10.5 Explicitly out of scope for the MVP
+
+The following are deferred until a later phase demonstrates a clear need:
+
+- User accounts, public profiles, and sign-in-dependent features.
+- Personal bookmarks, private notebooks, and personalised collections.
+- Voting, reputation scores, badges, and gamified contribution systems.
+- Forums, social feeds, direct messaging, and broad discussion features.
+- Personalised or AI-generated recommendations and matching.
+- Interactive code execution, hosted playgrounds, or execution of third-party skills/MCP servers.
+- Complex real-time collaboration and advanced workflow automation.
+- Advanced compatibility checkers and automated security certification.
+
+Curated editorial collections of public content are allowed in the MVP; personal collections are not. This is not a templates library or a paid-product marketplace.
+
+### 10.6 MVP success principle
+
+The first release is successful when people can find a useful resource, understand how and whether to use it, learn the relevant concepts, and contribute improvements through either approved path. Quality, clarity, safety, and maintainability take priority over feature count.
 
 ## 11. Later phases
 
-Potential capabilities to evaluate after the MVP:
+Potential capabilities to evaluate after the MVP, based on demonstrated user needs:
 
-- Website-based contribution workflow.
 - User accounts and profiles.
-- Bookmarks and personal collections.
-- Reading lists and learning progress.
-- Community discussions.
-- Project showcases and build-in-public contributions.
-- Contributor recognition.
+- Personal bookmarks, private notebooks, and reading lists.
+- Learning progress and personalisation.
+- Community discussions and project showcases.
+- Contributor recognition, voting, or reputation features.
 - Advanced search and personalised discovery.
-- Resource compatibility tools.
-- Version comparison and change notifications.
-- More sophisticated resource verification workflows.
+- Resource compatibility tools and richer verification workflows.
+- Version comparison, change notifications, and additional collaboration features.
+- Interactive learning experiences, only with an appropriate safety model.
 
-These are future possibilities, not commitments.
+These are future possibilities, not commitments. The MVP exclusions in Section 10 remain deferred unless explicitly reconsidered and approved.
 
 ## 12. Differentiation
 
@@ -319,19 +355,23 @@ The project should follow a free-first and open-source approach.
 - Preserve content attribution and licensing requirements.
 - Make architectural choices based on actual product needs.
 
-## 16. Product decisions still requiring approval
+## 16. Decisions reserved for later planning stages
 
-The following remain open for later planning stages:
+The following are not settled by approval of the product direction and MVP scope. They must be researched, documented, and approved in their relevant planning stages before implementation:
 
-- Exact MVP resource categories and launch content volume.
-- Final sitemap and navigation structure.
-- Which community capabilities belong in the first release.
-- Whether website-based submissions launch with the MVP or in a later phase.
-- Final editorial verification levels and review intervals.
-- User accounts and personalisation timing.
-- Final technical architecture and hosting choices.
+- Final sitemap, navigation, page hierarchy, and user journeys.
+- Initial launch content volume, editorial priorities, and exact guide sequence.
+- Detailed content schemas, metadata requirements, and review intervals.
+- Website submission mechanics and secure server-side or GitHub-backed intake design.
+- Final editorial verification levels and moderation procedures.
+- Framework, build tooling, search implementation, hosting configuration, and any backend/database choices.
+- Detailed responsive breakpoints, design tokens, typography, and visual identity implementation.
+- Accessibility acceptance criteria and testing approach.
 - Initial language support and localisation scope.
 - Licensing model for platform code and original editorial content.
+- Deployment, privacy, analytics, and operational procedures.
+
+Approval of this document does not authorise coding or silently select any of these technical decisions. They remain subject to the project's planning and approval workflow.
 
 ## 17. Guiding statement
 
