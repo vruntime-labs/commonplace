@@ -53,6 +53,8 @@ When proposing a third-party resource, include as much relevant information as p
 
 Do not present an unverified resource as officially endorsed or security-audited by Commonplace.
 
+For detailed content requirements, review the [content model](docs/content/content-model.md), [editorial policy](docs/governance/editorial-policy.md), and [contribution guidelines](docs/governance/contribution-guidelines.md).
+
 ## Security and privacy
 
 Never include passwords, API keys, access tokens, private user data, or other secrets in issues, pull requests, commits, screenshots, or documentation.
@@ -69,12 +71,12 @@ A useful pull request should:
 - Include relevant tests or verification notes for code changes.
 - Include screenshots for meaningful interface changes.
 - Credit sources and authors where required.
-- Disclose any known limitations or incomplete work.
+- Disclose known limitations or incomplete work.
 
 Before submitting, check that:
 
 - [ ] The change has a clear purpose.
-- [ ] Existing content and functionality are not unintentionally removed.
+- [ ] Existing content and functionality have not been unintentionally removed.
 - [ ] Links and references work.
 - [ ] Claims are accurate and appropriately sourced.
 - [ ] Third-party content is attributed and its reuse terms are respected.
@@ -82,7 +84,9 @@ Before submitting, check that:
 
 ## Website-based contributions
 
-A guided website-based submission path is part of the product direction, but it is not available yet. Until it is introduced, use GitHub issues for suggestions and pull requests for proposed changes.
+A guided website-based submission path is an approved MVP requirement, but it is not available yet. Until it launches, use GitHub issues for suggestions and pull requests for proposed changes.
+
+When introduced, website submissions will enter the same review and publication process as GitHub contributions. The submission flow must not expose a privileged GitHub write token or other secrets in browser code. See the detailed [contribution guidelines](docs/governance/contribution-guidelines.md).
 
 ## Licensing and ownership
 
