@@ -4,12 +4,18 @@ This directory contains the planning and reference documents that guide Commonpl
 
 ## Sections
 
-- [Product](product/): product direction, scope, and decisions.
+- [Product](product/): product direction, scope, information architecture, and user journeys.
 - [Brand](brand/): brand foundations and identity.
 - [Design](design/): design principles, system, and interface specifications.
 - [Architecture](architecture/): technical architecture and engineering decisions.
 - [Governance](governance/): community, editorial, and project governance.
 - [Roadmap](roadmap/): milestones and implementation planning.
+
+## Product documents
+
+- [Product strategy](product/product-strategy.md): approved product direction and MVP scope.
+- [Information architecture](product/information-architecture.md): approved sitemap, navigation, content areas, and shared page patterns.
+- [User journeys](product/user-journeys.md): approved MVP journeys, success criteria, and contribution flows.
 
 ## Document status
 
